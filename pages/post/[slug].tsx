@@ -27,7 +27,7 @@ const ptComponents = {
     }
 }
 
-const Post = ({post}: AppProps) => {
+const Post = ({post}) => {
     const {
         title = 'Missing title',
         name = 'Missing name',
