@@ -4,6 +4,7 @@ import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import {PortableText} from '@portabletext/react'
 import client from '../../client'
+import { AppProps } from 'next/app';
 
 function urlFor (source) {
     return imageUrlBuilder(client).image(source)
@@ -26,7 +27,7 @@ const ptComponents = {
     }
 }
 
-const Post = ({post}: any) => {
+const Post = ({post}: AppProps) => {
     const {
         title = 'Missing title',
         name = 'Missing name',

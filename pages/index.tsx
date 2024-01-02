@@ -3,8 +3,9 @@
 import Link from 'next/link'
 import groq from 'groq'
 import client from '../client'
+import { AppProps } from 'next/app';
 
-const Index = ({posts}: any) => {
+const Index = ({posts}: AppProps) => {
     return (
         <div>
             <h1>Cathelijne de Man</h1>
