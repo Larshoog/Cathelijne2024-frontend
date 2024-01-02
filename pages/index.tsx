@@ -4,7 +4,7 @@ import Link from 'next/link'
 import groq from 'groq'
 import client from '../client'
 
-const Index = ({posts}) => {
+const Index = ({posts}:any) => {
     return (
         <div>
             <h1>Cathelijne de Man</h1>

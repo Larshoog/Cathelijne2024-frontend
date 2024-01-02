@@ -26,7 +26,7 @@ const ptComponents = {
     }
 }
 
-const Post = ({post}) => {
+const Post = ({post}: any) => {
     const {
         title = 'Missing title',
         name = 'Missing name',
