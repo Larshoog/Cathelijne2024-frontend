@@ -33,7 +33,7 @@ const Index = ({posts}) => {
             {posts.length > 0 && posts.map(
                 ({_id, name = '', slug = '', bio = '', image = ''}) =>
                     slug && (
-                        <div>
+                        <div key={_id}>
                             {name}
                             <PortableText
                                 value={bio}
