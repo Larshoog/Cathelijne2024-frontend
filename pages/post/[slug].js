@@ -32,6 +32,7 @@ const Post = ({post}) => {
         name = 'Missing name',
         categories,
         authorImage,
+        mainImage,
         body = []
     } = post
     return (
@@ -58,12 +59,19 @@ const Post = ({post}) => {
                 value={body}
                 components={ptComponents}
             />
+            <img
+                src={urlFor(mainImage)
+                    .width(500)
+                    .url()}
+                alt={`${name}'s picture`}
+            />
         </article>
     )
 }
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
+  mainImage,
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
