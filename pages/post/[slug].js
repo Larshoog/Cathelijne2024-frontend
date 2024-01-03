@@ -5,13 +5,13 @@ import imageUrlBuilder from '@sanity/image-url'
 import {PortableText} from '@portabletext/react'
 import client from '../../client'
 
-function urlFor (source) {
+function urlFor(source) {
     return imageUrlBuilder(client).image(source)
 }
 
 const ptComponents = {
     types: {
-        image: ({ value }) => {
+        image: ({value}) => {
             if (!value?.asset?._ref) {
                 return null
             }
@@ -59,12 +59,14 @@ const Post = ({post}) => {
                 value={body}
                 components={ptComponents}
             />
-            <img
-                src={urlFor(mainImage)
-                    .width(500)
-                    .url()}
-                alt={`${name}'s picture`}
-            />
+            {mainImage && (
+                <img
+                    src={urlFor(mainImage)
+                        .width(500)
+                        .url()}
+                    alt={`${name}'s picture`}
+                />
+            )}
         </article>
     )
 }
@@ -77,6 +79,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "authorImage": author->image,
   body
 }`
+
 export async function getStaticPaths() {
     const paths = await client.fetch(
         groq`*[_type == "post" && defined(slug.current)][].slug.current`
@@ -90,12 +93,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
     // It's important to default the slug so that it doesn't return "undefined"
-    const { slug = "" } = context.params
-    const post = await client.fetch(query, { slug })
+    const {slug = ""} = context.params
+    const post = await client.fetch(query, {slug})
     return {
         props: {
             post
         }
     }
 }
+
 export default Post
