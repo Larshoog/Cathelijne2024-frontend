@@ -50,7 +50,7 @@ const Index = ({posts, announcements}) => (
                     title && (
                         <>
                             <TextBlock title={title} body={body}/>
-                            <div className={utilStyles.shopimage}>
+                            <div className={utilStyles.announcementimage}>
                                 <Image src={urlFor(image).url()} layout="fill" objectFit="contain"/>
                             </div>
                         </>

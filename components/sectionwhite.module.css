@@ -1,6 +1,6 @@
 .section {
     display: flex;
-    gap: 4rem;
+    gap: 0rem;
     padding: 1rem 1rem;
     background-color: #FFFFFF;
     align-items: stretch;
@@ -20,12 +20,4 @@
     .section:nth-child(even) {
         flex-direction: column;
     }
-}
-.gridwrapper {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    margin: 0 5vw;
-    gap: 4rem 0;
 }
