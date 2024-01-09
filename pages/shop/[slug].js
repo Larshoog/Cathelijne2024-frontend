@@ -5,6 +5,10 @@ import imageUrlBuilder from '@sanity/image-url'
 import {PortableText} from '@portabletext/react'
 import client from '../../client'
 import Layout from "../../components/Layout";
+import utilStyles from "../../styles/utils.module.css";
+import TextBlock from "../../components/TextBlock";
+import Image from "next/image";
+import SectionWhite from "../../components/SectionWhite";
 
 function urlFor(source) {
     return imageUrlBuilder(client).image(source)
@@ -38,38 +42,14 @@ const Post = ({post}) => {
     } = post
     return (
         <Layout>
-        <article>
-            <h1>{title}</h1>
-            <span>By {name}</span>
-            {categories && (
-                <ul>
-                    Posted in
-                    {categories.map(category => <li key={category}>{category}</li>)}
-                </ul>
-            )}
-            {authorImage && (
-                <div>
-                    <img
-                        src={urlFor(authorImage)
-                            .width(50)
-                            .url()}
-                        alt={`${name}'s picture`}
-                    />
+            <SectionWhite>
+                <div className={utilStyles.textcontainercontainer}>
+                    <TextBlock title={title} body={body}/>
+                    <div className={utilStyles.cardimage}>
+                        <Image src={urlFor(mainImage).url()} layout="fill" objectFit="contain"/>
+                    </div>
                 </div>
-            )}
-            <PortableText
-                value={body}
-                components={ptComponents}
-            />
-            {mainImage && (
-                <img
-                    src={urlFor(mainImage)
-                        .width(500)
-                        .url()}
-                    alt={`${name}'s picture`}
-                />
-            )}
-        </article>
+            </SectionWhite>
         </Layout>
     )
 }

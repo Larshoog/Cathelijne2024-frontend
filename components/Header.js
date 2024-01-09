@@ -56,7 +56,7 @@ const Header = ({imageUrl, name, pagetype, imageCredits}) => {
     return (
         <header className={styles.header}>
             <div className={utilStyles.mobilemenu}>
-                <IconButton color="secondary" variant="contained" aria-label="open drawer" onClick={toggleDrawer(true)}>
+                <IconButton color="primary" variant="contained" aria-label="open drawer" onClick={toggleDrawer(true)}>
                     <MenuIcon/>
                 </IconButton>
                 <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>

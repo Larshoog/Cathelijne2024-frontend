@@ -7,6 +7,9 @@ import {PortableText} from "@portabletext/react";
 import imageUrlBuilder from '@sanity/image-url'
 import Layout from "../components/Layout";
 import SectionWhite from "../components/SectionWhite";
+import utilStyles from "../styles/utils.module.css";
+import TextBlock from "../components/TextBlock";
+import Image from "next/image";
 
 function urlFor(source) {
     return imageUrlBuilder(client).image(source)
@@ -31,29 +34,43 @@ const ptComponents = {
 
 const Index = ({posts}) => (
     <Layout>
+        {/*<SectionWhite>*/}
+        {/*<div>*/}
+        {/*    {posts.length > 0 && posts.map(*/}
+        {/*        ({_id, name = '', slug = '', bio = '', image = ''}) =>*/}
+        {/*            slug && (*/}
+        {/*                <div key={_id}>*/}
+        {/*                    {name}*/}
+        {/*                    <PortableText*/}
+        {/*                        value={bio}*/}
+        {/*                        components={ptComponents}*/}
+        {/*                    />*/}
+        {/*                    <div>*/}
+        {/*                        <img*/}
+        {/*                            src={urlFor(image)*/}
+        {/*                                .width(50)*/}
+        {/*                                .url()}*/}
+        {/*                            alt={`${name}'s picture`}*/}
+        {/*                        />*/}
+        {/*                    </div>*/}
+        {/*                </div>*/}
+        {/*            )*/}
+        {/*    )}*/}
+        {/*</div>*/}
+        {/*</SectionWhite>*/}
         <SectionWhite>
-        <div>
             {posts.length > 0 && posts.map(
-                ({_id, name = '', slug = '', bio = '', image = ''}) =>
-                    slug && (
-                        <div key={_id}>
-                            {name}
-                            <PortableText
-                                value={bio}
-                                components={ptComponents}
-                            />
-                            <div>
-                                <img
-                                    src={urlFor(image)
-                                        .width(50)
-                                        .url()}
-                                    alt={`${name}'s picture`}
-                                />
+                ({_id, name = '', bio = '', image = ''}) =>
+                    name && (
+                        <div className={utilStyles.textcontainercontainer}>
+                            <TextBlock key={_id} title={name} body={bio}/>
+                            <div className={utilStyles.cardimage}>
+                                <Image src={urlFor(image).url()} layout="fill" objectFit="contain" alt={"Cathelijne de Man"}/>
                             </div>
                         </div>
                     )
             )}
-        </div>
+
         </SectionWhite>
     </Layout>
 )
