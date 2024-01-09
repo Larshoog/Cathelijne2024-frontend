@@ -18,7 +18,7 @@
 }
 
 .navbar {
-    color: #F7BAFF;
+    color: #EA9E8D;
     width: 50%;
     z-index: 10;
     padding: 35px;
@@ -54,7 +54,7 @@
     padding: 1rem 0rem 1rem 0rem;
     display: flex;
     justify-content: center;
-    background-color: #F7BAFF;
+    background-color: #EA9E8D;
 }
 
 .cardcontainer {
