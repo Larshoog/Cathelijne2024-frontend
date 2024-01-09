@@ -80,7 +80,7 @@ const Index = ({posts, announcements}) => (
 
 export async function getStaticProps() {
     const posts = await client.fetch(groq`
-      *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
+      *[_type == "post" && publishedAt < now() && "Featured" in categories[]->title] | order(publishedAt desc)
     `)
     const announcements = await client.fetch(groq`
       *[_type == "announcement" && publishedAt < now()] | order(publishedAt desc)
