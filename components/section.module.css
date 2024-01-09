@@ -4,6 +4,8 @@
     padding: 1rem 1rem;
     background-color: #EA9E8D;
     align-items: stretch;
+    flex-flow: row wrap;
+    flex-grow: 0;
 }
 
 .section:nth-child(even) {
@@ -11,7 +13,7 @@
 }
 
 .section > * {
-    flex: 1 20%;
+    flex: 1 1 20%;
 }
 
 @media (max-width: 600px) {

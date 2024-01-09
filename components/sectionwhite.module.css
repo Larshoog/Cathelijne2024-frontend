@@ -4,14 +4,12 @@
     padding: 1rem 1rem;
     background-color: #FFFFFF;
     align-items: stretch;
+    flex-flow: row wrap;
 }
 
-.section:nth-child(even) {
-    flex-direction: row-reverse;
-}
 
 .section > * {
-    flex: 1 1 auto;
+    flex: 1 1 30%;
 }
 
 @media (max-width: 600px) {

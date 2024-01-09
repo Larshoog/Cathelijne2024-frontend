@@ -39,7 +39,8 @@
 
 .container {
     min-height: 100vh;
-    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto;
 }
 
 .fabcontainer {
@@ -49,8 +50,7 @@
 .footer {
     text-align: center;
     width: 100%;
-    left: 0;
-    bottom: 0;
+    margin-top:auto;
     padding: 1rem 0rem 1rem 0rem;
     display: flex;
     justify-content: center;
