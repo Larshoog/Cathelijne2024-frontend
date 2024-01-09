@@ -5,6 +5,7 @@ import groq from 'groq'
 import client from '../client'
 import {PortableText} from "@portabletext/react";
 import imageUrlBuilder from '@sanity/image-url'
+import Layout from "../components/Layout";
 
 function urlFor(source) {
     return imageUrlBuilder(client).image(source)
@@ -27,8 +28,8 @@ const ptComponents = {
     }
 }
 
-const Index = ({posts}) => {
-    return (
+const Index = ({posts}) => (
+    <Layout>
         <div>
             {posts.length > 0 && posts.map(
                 ({_id, name = '', slug = '', bio = '', image = ''}) =>
@@ -51,8 +52,9 @@ const Index = ({posts}) => {
                     )
             )}
         </div>
-    )
-}
+    </Layout>
+)
+
 
 export async function getStaticProps() {
     const posts = await client.fetch(groq`
