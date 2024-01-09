@@ -9,6 +9,8 @@ import utilStyles from "../../styles/utils.module.css";
 import TextBlock from "../../components/TextBlock";
 import Image from "next/image";
 import SectionWhite from "../../components/SectionWhite";
+import TextBlockShop from "../../components/TextBlockShop";
+import SectionWhiteLargeImage from "../../components/SectionWhiteLargeImage";
 
 function urlFor(source) {
     return imageUrlBuilder(client).image(source)
@@ -21,16 +23,17 @@ const Post = ({post}) => {
         categories,
         authorImage,
         mainImage,
-        body = []
+        body = [],
+        price = []
     } = post
     return (
         <Layout>
-            <SectionWhite>
-                    <TextBlock title={title} body={body}/>
+            <SectionWhiteLargeImage>
+                    <TextBlockShop title={title} body1={body} body2={price}/>
                     <div className={utilStyles.shopimage}>
                         <Image src={urlFor(mainImage).url()} layout="fill" objectFit="contain"/>
                     </div>
-            </SectionWhite>
+            </SectionWhiteLargeImage>
         </Layout>
     )
 }
@@ -41,7 +44,8 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
-  body
+  body,
+  price
 }`
 
 export async function getStaticPaths() {

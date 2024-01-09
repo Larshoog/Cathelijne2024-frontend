@@ -12,6 +12,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import SectionWhite from "../components/SectionWhite";
 import TextBlock from "../components/TextBlock";
 import {PortableText} from "@portabletext/react";
+import SectionWhiteLargeImage from "../components/SectionWhiteLargeImage";
 
 function urlFor(source) {
     return imageUrlBuilder(client).image(source)
@@ -44,20 +45,20 @@ const Index = ({posts, announcements}) => (
                     )
             )}
         </Section>
-        <SectionWhite>
+        <SectionWhiteLargeImage>
             {announcements.length > 0 && announcements.map(
                 ({_id, title = '', body = '', image = ''}) =>
                     title && (
                         <>
                             <TextBlock title={title} body={body}/>
-                            <div className={utilStyles.announcementimage}>
+                            <div className={utilStyles.shopimage}>
                                 <Image src={urlFor(image).url()} layout="fill" objectFit="contain"/>
                             </div>
                         </>
                     )
             )}
 
-        </SectionWhite>
+        </SectionWhiteLargeImage>
     </Layout>
 )
 

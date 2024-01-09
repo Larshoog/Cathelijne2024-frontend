@@ -10,6 +10,7 @@ import SectionWhite from "../components/SectionWhite";
 import utilStyles from "../styles/utils.module.css";
 import TextBlock from "../components/TextBlock";
 import Image from "next/image";
+import SectionWhiteLargeImage from "../components/SectionWhiteLargeImage";
 
 function urlFor(source) {
     return imageUrlBuilder(client).image(source)
@@ -58,7 +59,7 @@ const Index = ({posts}) => (
         {/*    )}*/}
         {/*</div>*/}
         {/*</SectionWhite>*/}
-        <SectionWhite>
+        <SectionWhiteLargeImage>
             {posts.length > 0 && posts.map(
                 ({_id, name = '', bio = '', image = ''}) =>
                     name && (
@@ -71,7 +72,7 @@ const Index = ({posts}) => (
                     )
             )}
 
-        </SectionWhite>
+        </SectionWhiteLargeImage>
     </Layout>
 )
 
