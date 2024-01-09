@@ -55,7 +55,27 @@
     display: flex;
     justify-content: center;
     background-color: #EA9E8D;
-    position: absolute;
+}
+
+.cardcontainer {
+    height: 50vh;
+    margin: 0;
+    text-align: center;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.cardimage {
+    width: 100%;
+    height: 100%;
+    order: -1;
+    position: relative;
+}
+
+.cardtext {
+    order: 1;
 }
 
 @media (max-width: 600px) {
