@@ -11,7 +11,7 @@ import Image from "next/image";
 const Index = ({posts}) => (
     <Layout>
         <Image src={'/images/IMG_8479.jpeg'} width={0} height={0} sizes="100vw"
-               style={{ width: '100%', height: '500px', objectFit:'cover'}}/>
+               style={{ width: '100%', height: '60vh', objectFit:'cover'}}/>
         <Section>
             {posts.length > 0 && posts.map(
                 ({_id, title = '', slug = '', publishedAt = ''}) =>
