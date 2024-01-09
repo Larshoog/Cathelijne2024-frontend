@@ -65,8 +65,8 @@ const Index = ({posts, announcements}) => (
             {announcements.length > 0 && announcements.map(
                 ({_id, title = '', body = '', image = ''}) =>
                     title && (
-                        <div className={utilStyles.textcontainercontainer}>
-                            <TextBlock key={_id} title={title} body={body}/>
+                        <div key={_id} className={utilStyles.textcontainercontainer}>
+                            <TextBlock title={title} body={body}/>
                             <div className={utilStyles.cardimage}>
                                 <Image src={urlFor(image).url()} layout="fill" objectFit="contain"/>
                             </div>
