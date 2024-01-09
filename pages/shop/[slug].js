@@ -14,23 +14,6 @@ function urlFor(source) {
     return imageUrlBuilder(client).image(source)
 }
 
-const ptComponents = {
-    types: {
-        image: ({value}) => {
-            if (!value?.asset?._ref) {
-                return null
-            }
-            return (
-                <img
-                    alt={value.alt || ' '}
-                    loading="lazy"
-                    src={urlFor(value).width(320).height(240).fit('max').auto('format')}
-                />
-            )
-        }
-    }
-}
-
 const Post = ({post}) => {
     const {
         title = 'Missing title',
@@ -43,12 +26,10 @@ const Post = ({post}) => {
     return (
         <Layout>
             <SectionWhite>
-                <div className={utilStyles.textcontainercontainer}>
                     <TextBlock title={title} body={body}/>
-                    <div className={utilStyles.cardimage}>
+                    <div className={utilStyles.shopimage}>
                         <Image src={urlFor(mainImage).url()} layout="fill" objectFit="contain"/>
                     </div>
-                </div>
             </SectionWhite>
         </Layout>
     )

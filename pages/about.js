@@ -62,12 +62,12 @@ const Index = ({posts}) => (
             {posts.length > 0 && posts.map(
                 ({_id, name = '', bio = '', image = ''}) =>
                     name && (
-                        <div key={_id} className={utilStyles.textcontainercontainer}>
+                        <>
                             <TextBlock title={name} body={bio}/>
-                            <div className={utilStyles.cardimage}>
+                            <div className={utilStyles.shopimage}>
                                 <Image src={urlFor(image).url()} layout="fill" objectFit="contain" alt={"Cathelijne de Man"}/>
                             </div>
-                        </div>
+                        </>
                     )
             )}
 

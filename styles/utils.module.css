@@ -106,12 +106,9 @@
     height: 100%;
 }
 
-.textcontainercontainer {
-    margin: 0;
-    text-align: center;
-    padding: 2rem 2rem;
-    display: flex;
-    flex-direction: row-reverse;
+.shopimage{
+    position: relative;
+    height: 80vh;
 }
 
 @media (max-width: 600px) {

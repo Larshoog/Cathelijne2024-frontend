@@ -17,23 +17,6 @@ function urlFor(source) {
     return imageUrlBuilder(client).image(source)
 }
 
-const ptComponents = {
-    types: {
-        image: ({value}) => {
-            if (!value?.asset?._ref) {
-                return null
-            }
-            return (
-                <img
-                    alt={value.alt || ' '}
-                    loading="lazy"
-                    src={urlFor(value).width(320).height(240).fit('max').auto('format')}
-                />
-            )
-        }
-    }
-}
-
 const Index = ({posts, announcements}) => (
     <Layout>
         <Image src={'/images/IMG_8479.jpeg'} width={0} height={0} sizes="100vw"
@@ -65,12 +48,12 @@ const Index = ({posts, announcements}) => (
             {announcements.length > 0 && announcements.map(
                 ({_id, title = '', body = '', image = ''}) =>
                     title && (
-                        <div key={_id} className={utilStyles.textcontainercontainer}>
+                        <>
                             <TextBlock title={title} body={body}/>
-                            <div className={utilStyles.cardimage}>
+                            <div className={utilStyles.shopimage}>
                                 <Image src={urlFor(image).url()} layout="fill" objectFit="contain"/>
                             </div>
-                        </div>
+                        </>
                     )
             )}
 
