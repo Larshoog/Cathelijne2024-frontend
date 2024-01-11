@@ -1,6 +1,7 @@
 import {createTheme, ThemeProvider} from '@mui/material'
 import React from 'react'
 import '../styles/global.css'
+import Footer from "../components/Footer";
 
 const theme = createTheme({
     palette: {
@@ -21,7 +22,10 @@ const theme = createTheme({
 
 const App = ({Component, pageProps}) => (
     <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <main>
+            <Component {...pageProps} />
+        </main>
+        <Footer/>
     </ThemeProvider>
 )
 

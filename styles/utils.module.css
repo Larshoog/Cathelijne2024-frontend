@@ -61,6 +61,7 @@
     display: flex;
     justify-content: center;
     background-color: #EA9E8D;
+    bottom: 0;
 }
 
 .cardcontainer {
