@@ -7,6 +7,7 @@ import {
     MusicNote as MusicNoteIcon,
     Person as PersonIcon,
     SmartDisplay as SmartDisplayIcon,
+    ShoppingCart as ShoppingCartIcon,
 } from '@mui/icons-material'
 import {
     Box,
@@ -32,7 +33,8 @@ import NavItem from './NavItem'
 const nav = [
     {url: '/', label: 'Home', icon: <HomeIcon/>},
     {url: '/about', label: 'Over', icon: <PersonIcon/>},
-    {url: '/shop', label: 'Webshop', icon: <MailIcon/>},
+    {url: '/shop', label: 'Webshop', icon: <ShoppingCartIcon/>},
+    // {url: '/contact', label: 'Contact', icon: <MailIcon/>},
 ]
 
 const Header = ({imageUrl, name, pagetype, imageCredits}) => {
