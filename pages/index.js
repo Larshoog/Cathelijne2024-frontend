@@ -22,20 +22,6 @@ const Index = ({posts, announcements}) => (
     <Layout>
         <Image src={'/images/IMG_8479.jpeg'} width={0} height={0} sizes="100vw"
                style={{width: '100%', height: '60vh', objectFit: 'cover'}}/>
-        {/*<Section>*/}
-        {/*    {posts.length > 0 && posts.map(*/}
-        {/*        ({_id, title = '', slug = '', publishedAt = ''}) =>*/}
-        {/*            slug && (*/}
-        {/*                <li key={_id}>*/}
-        {/*                    <Link href={`/post/${encodeURIComponent(slug.current)}`}>*/}
-        {/*                        {title}*/}
-        {/*                    </Link>{' '}*/}
-        {/*                    ({new Date(publishedAt).toDateString()})*/}
-        {/*                </li>*/}
-        {/*            )*/}
-        {/*    )}*/}
-        {/*</Section>*/}
-        {/*Hallo*/}
         <Section>
             {posts.length > 0 && posts.map(
                 ({_id, title = '', slug = '', publishedAt = '', mainImage = '',}) =>

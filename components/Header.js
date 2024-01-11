@@ -34,7 +34,7 @@ const nav = [
     {url: '/', label: 'Home', icon: <HomeIcon/>},
     {url: '/about', label: 'Over', icon: <PersonIcon/>},
     {url: '/shop', label: 'Webshop', icon: <ShoppingCartIcon/>},
-    // {url: '/contact', label: 'Contact', icon: <MailIcon/>},
+    {url: '/contact', label: 'Contact', icon: <MailIcon/>},
 ]
 
 const Header = ({imageUrl, name, pagetype, imageCredits}) => {

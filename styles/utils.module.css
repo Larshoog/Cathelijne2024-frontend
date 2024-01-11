@@ -17,6 +17,12 @@
     flex-wrap: nowrap;
 }
 
+.formcontainer {
+    display: block;
+    text-align: center;
+    padding: 40px;
+}
+
 .navbar {
     color: #4F6FD4;
     width: 50%;
