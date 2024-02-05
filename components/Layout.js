@@ -3,6 +3,7 @@ import {useRouter} from 'next/router'
 import Footer from './Footer'
 import styles from './layout.module.css'
 import Header from "./Header";
+import { Analytics } from '@vercel/analytics/react';
 
 const Layout = ({children}) => {
     const router = useRouter()
@@ -16,6 +17,7 @@ const Layout = ({children}) => {
             <Header>
             </Header>
             {children}
+            <Analytics />
         </div>
     )
 }
