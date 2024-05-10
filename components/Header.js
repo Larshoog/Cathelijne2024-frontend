@@ -8,6 +8,7 @@ import {
     Person as PersonIcon,
     SmartDisplay as SmartDisplayIcon,
     ShoppingCart as ShoppingCartIcon,
+    FolderIcon as FolderIcon,
 } from '@mui/icons-material'
 import {
     Box,
@@ -34,6 +35,7 @@ const nav = [
     {url: '/', label: 'Home', icon: <HomeIcon/>},
     {url: '/about', label: 'Over', icon: <PersonIcon/>},
     {url: '/shop', label: 'Webshop', icon: <ShoppingCartIcon/>},
+    {url: '/projects', label: 'Projects', icon: <FolderIcon/>},
     {url: '/contact', label: 'Contact', icon: <MailIcon/>},
 ]
 
