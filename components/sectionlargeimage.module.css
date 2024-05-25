@@ -1,0 +1,19 @@
+.section {
+    display: flex;
+    gap: 0rem;
+    padding: 1rem 1rem;
+    background-color: #F28C28;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+
+.section > * {
+    flex: 1 0 50%;
+}
+
+@media (max-width: 600px) {
+    .section {
+        gap: 0rem;
+    }
+}

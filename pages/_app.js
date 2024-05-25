@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#EA9E8D',
+            main: '#F28C28',
         },
         secondary: {
             main: '#3ABEFF',

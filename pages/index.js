@@ -20,9 +20,10 @@ function urlFor(source) {
 
 const Index = ({posts, announcements}) => (
     <Layout>
-        <Image src={'/images/IMG_8479.jpeg'} width={0} height={0} sizes="100vw"
+        <Image src={'/images/New.jpg'} width={0} height={0} sizes="100vw"
                style={{width: '100%', height: '60vh', objectFit: 'cover'}}/>
-        <Section>
+        <Section></Section>
+        <SectionWhite>
             {posts.length > 0 && posts.map(
                 ({_id, title = '', slug = '', publishedAt = '', mainImage = '',}) =>
                     slug && (
@@ -30,21 +31,21 @@ const Index = ({posts, announcements}) => (
                               linkUrl={`/shop/${encodeURIComponent(slug.current)}`}/>
                     )
             )}
-        </Section>
-        <SectionWhiteLargeImage>
-            {announcements.length > 0 && announcements.map(
-                ({_id, title = '', body = '', image = ''}) =>
-                    title && (
-                        <>
-                            <TextBlock title={title} body={body}/>
-                            <div className={utilStyles.shopimage}>
-                                <Image src={urlFor(image).url()} layout="fill" objectFit="contain"/>
-                            </div>
-                        </>
-                    )
-            )}
+        </SectionWhite>
+        {/*<SectionWhiteLargeImage>*/}
+        {/*    {announcements.length > 0 && announcements.map(*/}
+        {/*        ({_id, title = '', body = '', image = ''}) =>*/}
+        {/*            title && (*/}
+        {/*                <>*/}
+        {/*                    <TextBlock title={title} body={body}/>*/}
+        {/*                    <div className={utilStyles.shopimage}>*/}
+        {/*                        <Image src={urlFor(image).url()} layout="fill" objectFit="contain"/>*/}
+        {/*                    </div>*/}
+        {/*                </>*/}
+        {/*            )*/}
+        {/*    )}*/}
 
-        </SectionWhiteLargeImage>
+        {/*</SectionWhiteLargeImage>*/}
     </Layout>
 )
 
