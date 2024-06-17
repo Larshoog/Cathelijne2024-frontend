@@ -8,7 +8,6 @@ import {
     Person as PersonIcon,
     SmartDisplay as SmartDisplayIcon,
     ShoppingCart as ShoppingCartIcon,
-    FolderIcon as FolderIcon,
 } from '@mui/icons-material'
 import {
     Box,
@@ -22,6 +21,7 @@ import {
     ListItemIcon,
     ListItemText,
 } from '@mui/material'
+import FolderIcon from '@mui/icons-material/Folder';
 import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react'
